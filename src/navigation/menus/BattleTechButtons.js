@@ -15,8 +15,8 @@ export default function BattleTechButtons({setOpen}) {
         if(btOpen){
           return (
             <List sx={{ marginLeft: "30px" }}>
-              {CreateListItem('Hit Table', <Icon icon="game-icons:rolling-dices"/>, "/dicem8/battletech/hitloc", setOpen)}
-              {CreateListItem('Cluster Table', <Icon icon="game-icons:rolling-dices"/>, "/dicem8/battletech/cluster", setOpen)}
+              {CreateListItem('Hit Table', <Icon icon="game-icons:rolling-dices"/>, "/dicem8/pages/battletech/hitloc", setOpen)}
+              {CreateListItem('Cluster Table', <Icon icon="game-icons:rolling-dices"/>, "/dicem8/pages/battletech/cluster", setOpen)}
             </List>
           )
         }

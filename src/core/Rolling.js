@@ -22,6 +22,11 @@ export function RollMapped(numberOfRolls, rollMapping) {
     let paired = rollMapping.paired
     let dieType = rollMapping.dieType
     let rollMap = rollMapping.rollMap
-    let [rolls,] = paired ? RollPairs(numberOfRolls, dieType) : RollNdS(numberOfRolls, dieType)
+    let rolls = []
+    if(paired) {
+        rolls = RollPairs(numberOfRolls, dieType)
+    } else {
+        [rolls, ] =  RollNdS(numberOfRolls, dieType)
+    }
     return rolls.map(roll => `${paired ? 2 : 1}d${dieType}: ${roll}\t-> ${rollMap.has(roll) ? rollMap.get(roll) : "Unknown"}`)
 }

@@ -17,10 +17,10 @@ export default function App() {
             <BrowserRouter>
               <Routes>
                   <Route path="/dicem8" element={<BasicRoll />}/>
-                  <Route path="/dicem8/battletech/hitloc" element={<HitLocationRoll />}/>
-                  <Route path="/dicem8/battletech/cluster" element={<ClusterRoll />}/>
-                  <Route path="/dicem8/gaslands/skiddie" element={<SkidDieRoll />}/>
-                  <Route path="/dicem8/about" element={<About />} />
+                  <Route path="/dicem8/pages/battletech/hitloc" element={<HitLocationRoll />}/>
+                  <Route path="/dicem8/pages/battletech/cluster" element={<ClusterRoll />}/>
+                  <Route path="/dicem8/pages/gaslands/skiddie" element={<SkidDieRoll />}/>
+                  <Route path="/dicem8/pages/about" element={<About />} />
               </Routes>
             </BrowserRouter>
           </Box>

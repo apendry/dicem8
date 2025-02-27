@@ -42,7 +42,7 @@ export default function ButtonBar() {
       </List>
       <Divider />
       <List>
-        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/dicem8/about", setOpen)}
+        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/dicem8/pages/about", setOpen)}
       </List>
     </Box>
   );

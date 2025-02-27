@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { FormControlLabel, FormGroup, Grid2, Switch } from '@mui/material';
 import {Icon} from "@iconify/react"
 import DieTypesMenu from '../navigation/menus/DieTypesMenu';
-import {RollNdS} from '../core/Rolling';
+import {RollNdS, RollPairs} from '../core/Rolling';
 
 export default function BasicRoll() {
     const [paired, setPaired] = useState(false);
@@ -15,10 +15,10 @@ export default function BasicRoll() {
     function roll() {
         let resultMessage = "";
         if(paired) {
-            const [rolls, ] = RollNdS(nDie, paired, dieType)
+            const rolls = RollPairs(nDie, dieType)
             resultMessage = rolls.map(roll => `2d${dieType}: ${roll}`).join("\n")
         } else {
-            var [rolls, total] = RollNdS(nDie, paired, dieType)
+            var [rolls, total] = RollNdS(nDie, dieType)
             resultMessage += nDie > 1 ? `Total ${nDie}d${dieType}: ${total}\n` : ""
             resultMessage += rolls.map(roll => `1d${dieType}: ${roll}`).join("\n")
         }
@@ -37,7 +37,7 @@ export default function BasicRoll() {
                 </FormGroup>
             </Grid2>
             <Grid2 size="grow">
-                <TextField fullWidth id="n" label={`Number of ${paired ? "Pairs" : "Dice"}`} variant="outlined" defaultValue="1" onChange={(event) => {setNDie(parseInt(event.target.value))}}/>
+                <TextField fullWidth id="n" label={`Number of ${paired ? "Pairs" : "Dice"}`} variant="outlined" defaultValue={1} onChange={(event) => {setNDie(event.target.value)}}/>
             </Grid2>
             <Grid2 size={4.5}>
                 <DieTypesMenu setDieType={setDieType}/>
