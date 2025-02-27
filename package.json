@@ -2,6 +2,7 @@
   "name": "react.dev",
   "version": "0.0.0",
   "main": "/src/index.js",
+  "homepage": "https://apendry.github.io/dicem8/",
   "browserslist": [
     "chrome >= 87",
     "edge >= 88",
@@ -9,6 +10,8 @@
     "safari >= 14"
   ],
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@iconify-json/game-icons": "^1.2.1",
-    "@iconify/react": "^5.2.0"
+    "@iconify/react": "^5.2.0",
+    "gh-pages": "^5.0.0"
   }
 }

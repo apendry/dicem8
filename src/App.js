@@ -16,11 +16,11 @@ export default function App() {
             <ButtonBar/>
             <BrowserRouter>
               <Routes>
-                  <Route path="/" element={<BasicRoll />}/>
-                  <Route path="/battletech/hitloc" element={<HitLocationRoll />}/>
-                  <Route path="/battletech/cluster" element={<ClusterRoll />}/>
-                  <Route path="/gaslands/skiddie" element={<SkidDieRoll />}/>
-                  <Route path="/about" element={<About />} />
+                  <Route path="/dicem8" element={<BasicRoll />}/>
+                  <Route path="/dicem8/battletech/hitloc" element={<HitLocationRoll />}/>
+                  <Route path="/dicem8/battletech/cluster" element={<ClusterRoll />}/>
+                  <Route path="/dicem8/gaslands/skiddie" element={<SkidDieRoll />}/>
+                  <Route path="/dicem8/about" element={<About />} />
               </Routes>
             </BrowserRouter>
           </Box>

@@ -36,13 +36,13 @@ export default function ButtonBar() {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
-        {CreateListItem('Basic Rolls', <Icon icon="game-icons:perspective-dice-one"/>, "/", setOpen)}
+        {CreateListItem('Basic Rolls', <Icon icon="game-icons:perspective-dice-one"/>, "/dicem8", setOpen)}
         <BattleTechButtons setOpen={setOpen}/>
         <GaslandsButtons setOpen={setOpen}/>
       </List>
       <Divider />
       <List>
-        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/about", setOpen)}
+        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/dicem8/about", setOpen)}
       </List>
     </Box>
   );
