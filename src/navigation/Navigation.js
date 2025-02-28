@@ -13,14 +13,17 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import {Icon} from "@iconify/react"
-import BattleTechButtons from './menus/BattleTechButtons';
-import GaslandsButtons from './menus/GaslandsButtons';
-import { Link } from 'react-router-dom';
+import BattleTechNavigation from './menus/BattleTechNavigation';
+import GaslandsNavigation from './menus/GaslandsNavigation';
+import { Link, useLocation } from 'react-router-dom';
+import { endPoints } from '../App';
 
-export function CreateListItem(name, icon, href, setOpen) {
+export function CreateListItem(name, icon, setOpen) {
+  let path = endPoints.get(name)
+
   return (
     <ListItem key={name} disablePadding>
-      <ListItemButton component={Link} to={href} onClick={() => setOpen(false)}>
+      <ListItemButton component={Link} to={path} onClick={() => setOpen(false)}>
         <ListItemIcon>
           {icon}
         </ListItemIcon>
@@ -30,20 +33,20 @@ export function CreateListItem(name, icon, href, setOpen) {
   )
 }
 
-export default function ButtonBar() {
+export default function Navigation() {
 
   const [open, setOpen] = React.useState(false)
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
-        {CreateListItem('Basic Rolls', <Icon icon="game-icons:perspective-dice-one"/>, "/", setOpen)}
-        <BattleTechButtons setOpen={setOpen}/>
-        <GaslandsButtons setOpen={setOpen}/>
+        {CreateListItem('Basic Roll', <Icon icon="game-icons:perspective-dice-one"/>, setOpen)}
+        <BattleTechNavigation setOpen={setOpen}/>
+        <GaslandsNavigation setOpen={setOpen}/>
       </List>
       <Divider />
       <List>
-        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/pages/about", setOpen)}
+        {CreateListItem('About', <Icon icon="game-icons:info" />, setOpen)}
       </List>
     </Box>
   );
@@ -56,7 +59,7 @@ export default function ButtonBar() {
             <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            DiceM<Icon icon="game-icons:dice-eight-faces-eight" />
+              DiceM<Icon icon="game-icons:dice-eight-faces-eight" /> - {endPoints.revGet(useLocation().pathname)}
             </Typography>
         </Toolbar>
         </AppBar>

@@ -29,11 +29,15 @@ export default function BasicRoll() {
         <>
         <Grid2 container spacing={2} columns={12} justifyContent="flex-start" alignItems="center">
             <Grid2 size={1}>
-                <Button variant="contained" onClick={roll} >Roll</Button>
+                <Button sx={{ maxWidth: "50px", minWidth: "30px"}} variant="contained" onClick={roll} >Roll</Button>
             </Grid2>
             <Grid2 size={2}>
                 <FormGroup>
-                    <FormControlLabel control={<Switch name="Paired" variant="outlined" onChange={(event) => setPaired(event.target.checked)}/>} label={<Icon icon="game-icons:rolling-dices"/>} labelPlacement="start"/>
+                    <FormControlLabel
+                        control={<Switch name="Paired" variant="outlined" onChange={(event) => setPaired(event.target.checked)}/>}
+                        label={<Icon icon="game-icons:rolling-dices"/>}
+                        labelPlacement="top"
+                    />
                 </FormGroup>
             </Grid2>
             <Grid2 size="grow">

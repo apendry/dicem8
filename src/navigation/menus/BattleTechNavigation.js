@@ -5,9 +5,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import {Icon} from "@iconify/react"
-import { CreateListItem } from '../ButtonBar';
+import { CreateListItem } from '../Navigation';
 
-export default function BattleTechButtons({setOpen}) {
+export default function BattleTechNavigation({setOpen}) {
 
     const [btOpen, setBtOpen] = React.useState(false)
 
@@ -15,8 +15,8 @@ export default function BattleTechButtons({setOpen}) {
         if(btOpen){
           return (
             <List sx={{ marginLeft: "30px" }}>
-              {CreateListItem('Hit Table', <Icon icon="game-icons:rolling-dices"/>, "/pages/battletech/hitloc", setOpen)}
-              {CreateListItem('Cluster Table', <Icon icon="game-icons:rolling-dices"/>, "/pages/battletech/cluster", setOpen)}
+              {CreateListItem('Hit Location', <Icon icon="game-icons:rolling-dices"/>, setOpen)}
+              {CreateListItem('Cluster Table', <Icon icon="game-icons:rolling-dices"/>, setOpen)}
             </List>
           )
         }

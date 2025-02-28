@@ -18,12 +18,12 @@ export default function SkidDieRoll() {
     return (
         <>
         <FormGroup>
-            <Grid2 container spacing={2} columns={12} justifyContent="flex-start" alignItems="center">
-                <Grid2 size="grow">
-                    <TextField fullWidth id="n" label={`Number of Skid Die`} variant="outlined" defaultValue={1} onChange={(event) => {setNDie(event.target.value)}}/>
-                </Grid2>
+            <Grid2 container spacing={2} columns={12} alignItems="center">
                 <Grid2 size={1.5}>
-                    <Button type='submit' variant="contained" onClick={roll}>Roll</Button>
+                    <Button sx={{ maxWidth: "50px", minWidth: "30px"}} type='submit' variant="contained" onClick={roll}>Roll</Button>
+                </Grid2>
+                <Grid2 size={10.5}>
+                    <TextField  fullWidth id="n" label={`Number of Skid Die`} variant="outlined" defaultValue={1} onChange={(event) => {setNDie(event.target.value)}}/>
                 </Grid2>
                 <Grid2 size={12}>
                     <TextField fullWidth disabled id="results-box" label="Results" variant="outlined" multiline maxRows={10} value={result}/>

@@ -29,12 +29,16 @@ export default function HitLocationRoll() {
     return (
         <>
         <FormGroup>
-            <Grid2 container spacing={2} columns={12} justifyContent="flex-start" alignItems="center">
-                <Grid2 size={1.5}>
-                    <Button type='submit' variant="contained" onClick={roll} >Roll</Button>
+            <Grid2 container spacing={2} columns={12} alignItems="center">
+                <Grid2 size={1}>
+                    <Button sx={{ maxWidth: "50px", minWidth: "30px"}} type='submit' variant="contained" onClick={roll}>Roll</Button>
                 </Grid2>
                 <Grid2 size={2}>
-                    <FormControlLabel control={<Switch name="Quad" variant="outlined" onChange={(event) => setQuad(event.target.checked)}/>} label="Quad" labelPlacement="top"/>
+                    <FormControlLabel 
+                        control={<Switch variant="outlined" onChange={(event) => setQuad(event.target.checked)}/>} 
+                        label="Qd." 
+                        labelPlacement="top"
+                    />
                 </Grid2>
                 <Grid2 size={3}>
                     <TextField fullWidth select id="s" label="Facing" variant="outlined" defaultValue="ft" onChange={(event) => {setFacing(event.target.value)}}>
@@ -43,7 +47,7 @@ export default function HitLocationRoll() {
                         <MenuItem key="lt" value="lt">Left</MenuItem>
                     </TextField>
                 </Grid2>
-                <Grid2 size={5.5}>
+                <Grid2 size="grow">
                     <TextField fullWidth id="n" label={`Number of Pairs`} variant="outlined" defaultValue="1" onChange={(event) => {setNDie(parseInt(event.target.value))}}/>
                 </Grid2>
                 <Grid2 size={12}>
