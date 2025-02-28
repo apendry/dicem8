@@ -15,7 +15,7 @@ export default function GaslandsButtons({setOpen}) {
         if(glOpen){
           return (
             <List sx={{ marginLeft: "30px" }}>
-              {CreateListItem('Skid Dice', <Icon icon="game-icons:perspective-dice-one"/>, "/dicem8/pages/gaslands/skiddie", setOpen)}
+              {CreateListItem('Skid Dice', <Icon icon="game-icons:perspective-dice-one"/>, "/pages/gaslands/skiddie", setOpen)}
             </List>
           )
         }

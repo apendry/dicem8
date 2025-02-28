@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createHashRouter, RouterProvider, BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import ButtonBar from './navigation/ButtonBar';
 import BasicRoll from './pages/BasicRoll';
 import About from './pages/About';
@@ -10,19 +10,43 @@ import SkidDieRoll from './pages/gaslands/SkidDieRoll';
 
 export default function App() {
 
+  // const router = createHashRouter([
+  //   {
+  //     path: "/",
+  //     element: <BasicRoll />
+  //   },
+  //   {
+  //     path: "/pages/battletech/hitloc",
+  //     element: <HitLocationRoll />
+  //   },
+  //   {
+  //     path: "/pages/battletech/cluster",
+  //     element: <ClusterRoll />
+  //   },
+  //   {
+  //     path: "/pages/gaslands/skiddie",
+  //     element: <SkidDieRoll />
+  //   },
+  //   {
+  //     path: "/pages/about",
+  //     element: <About />
+  //   }
+  // ]);
+
+
     return (
         <>
           <Box sx={{ width: "auto", maxWidth: "600px"}}>
-            <ButtonBar/>
-            <BrowserRouter>
+            <HashRouter>
+              <ButtonBar/>
               <Routes>
-                  <Route path="/dicem8" element={<BasicRoll />}/>
-                  <Route path="/dicem8/pages/battletech/hitloc" element={<HitLocationRoll />}/>
-                  <Route path="/dicem8/pages/battletech/cluster" element={<ClusterRoll />}/>
-                  <Route path="/dicem8/pages/gaslands/skiddie" element={<SkidDieRoll />}/>
-                  <Route path="/dicem8/pages/about" element={<About />} />
+                  <Route path="/" element={<BasicRoll />}/>
+                  <Route path="/pages/battletech/hitloc" element={<HitLocationRoll />}/>
+                  <Route path="/pages/battletech/cluster" element={<ClusterRoll />}/>
+                  <Route path="/pages/gaslands/skiddie" element={<SkidDieRoll />}/>
+                  <Route path="/pages/about" element={<About />} />
               </Routes>
-            </BrowserRouter>
+            </HashRouter>
           </Box>
         </>
     );

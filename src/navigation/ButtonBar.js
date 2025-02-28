@@ -15,11 +15,12 @@ import ListItemText from '@mui/material/ListItemText';
 import {Icon} from "@iconify/react"
 import BattleTechButtons from './menus/BattleTechButtons';
 import GaslandsButtons from './menus/GaslandsButtons';
+import { Link } from 'react-router-dom';
 
-export function CreateListItem(name, icon, href, {setOpen}) {
+export function CreateListItem(name, icon, href, setOpen) {
   return (
     <ListItem key={name} disablePadding>
-      <ListItemButton href={href} onClick={() => setOpen(false)}>
+      <ListItemButton component={Link} to={href} onClick={() => setOpen(false)}>
         <ListItemIcon>
           {icon}
         </ListItemIcon>
@@ -36,13 +37,13 @@ export default function ButtonBar() {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
-        {CreateListItem('Basic Rolls', <Icon icon="game-icons:perspective-dice-one"/>, "/dicem8", setOpen)}
+        {CreateListItem('Basic Rolls', <Icon icon="game-icons:perspective-dice-one"/>, "/", setOpen)}
         <BattleTechButtons setOpen={setOpen}/>
         <GaslandsButtons setOpen={setOpen}/>
       </List>
       <Divider />
       <List>
-        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/dicem8/pages/about", setOpen)}
+        {CreateListItem('About', <Icon icon="game-icons:info"/>, "/pages/about", setOpen)}
       </List>
     </Box>
   );
